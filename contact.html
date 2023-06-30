@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Website design for me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+<body>
+    <section class ="header">
+        <nav>
+            <img src="logo1.png">
+            <div class="nav-links">
+              <ul>
+                <li><a href="file:///C:/Users/Archith/OneDrive/Desktop/website/index.html">HOME</a></li>
+                <li><a href="file:///C:/Users/Archith/OneDrive/Desktop/website/Sustainable%20living.html">SUSTAINABLE LIVING</a></li>
+                <li><a href="file:///C:/Users/Archith/OneDrive/Desktop/website/issues.html">ISSUES</a></li>
+                <li><a href="file:///C:/Users/Archith/OneDrive/Desktop/website/products.html#Signup">PRODUCTS</a></li>
+                <li><a href="#">GREEN INITIATIVES</a></li>
+                <li><a href="file:///C:/Users/Archith/OneDrive/Desktop/website/events.html#">EVENTS</a></li>
+                <li><a href="file:///C:/Users/Archith/OneDrive/Desktop/website/about.html">CONTACT </a></li>
+              </ul>  
+            </div>
+        </nav> 
+    </section>
+    <div class="container">
+      <form onsubmit="sendEmail(); reset();return false;">
+        <h3>GET IN TOUCH</h3>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Email Id" required>
+        <input type="text" id="phone" placeholder="Phone no." required>
+        <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "conceptcorneranv@gmail.com",
+                Password : "084857F4D48BD15A927465FAEE635348DFC1",
+                To : 'them@website.com',
+                From : document.getElementById("email").value,
+                Subject : "New Contact Form Enquiry",
+                Body : "Name: "+document.getElementById("name").value
+                + "<br> Email: "+document.getElementById("email").value
+                + "<br> Phone no.: "+document.getElementById("phone").value
+                + "<br> Message: "+document.getElementById("message").value
+            }).then(
+              message => alert(message)
+            );
+        }
+    </script>
+</body>
+</html>
